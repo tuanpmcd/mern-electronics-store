@@ -12,7 +12,7 @@ const Meta = ({ title, description, keywords }) => {
 }
 
 Meta.defaultProps = {
-  title: 'E-Commerce | TuanPham-MERN',
+  title: 'Tuan Pham | Electronics',
   description: 'description',
   keywords: 'keywords',
 }
