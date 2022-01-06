@@ -17,9 +17,9 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar bg='secondary' variant='dark' expand='lg' collapseOnSelect>
         <Container>
-          <LinkContainer to='/'>
+          <LinkContainer to='/'  className="my-1" >
             <Navbar.Brand>Shop</Navbar.Brand>
           </LinkContainer>
 
@@ -27,7 +27,7 @@ const Header = () => {
 
           <Navbar.Collapse id='basic-navbar-nav' className='d-lg-flex justify-content-between'>
             <SearchBox />
-            <Nav className='ml-auto'>
+            <Nav className='ml-auto my-1'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i> Cart

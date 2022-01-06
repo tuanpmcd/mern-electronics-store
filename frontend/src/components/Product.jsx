@@ -5,13 +5,13 @@ import Rating from './Rating'
 
 const Product = ({ product }) => {
   return (
-    <Card className='my-3 p-4 rounded-3'>
+    <Card className='my-3 p-2 rounded-3'>
       <Link to={`/product/${product._id}`}>
         <Card.Img style={{ maxHeight: "200px", objectFit: "contain" }} src={product.image} variant='top' />
       </Link>
 
-      <Card.Body>
-        <Link to={`/product/${product._id}`}>
+      <Card.Body className='d-flex flex-column justify-content-end' style={{ minHeight: "180px" }}>
+        <Link to={`/product/${product._id}`} className='text-dark text-decoration-none'>
           <Card.Title as='div'>
             <strong>{product.name}</strong>
           </Card.Title>
