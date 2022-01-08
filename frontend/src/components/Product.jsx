@@ -10,7 +10,7 @@ const Product = ({ product }) => {
         <Card.Img style={{ maxHeight: "200px", objectFit: "contain" }} src={product.image} variant='top' />
       </Link>
 
-      <Card.Body className='d-flex flex-column justify-content-end' style={{ minHeight: "180px" }}>
+      <Card.Body className='d-flex flex-column justify-content-end' style={{ minHeight: "200px" }}>
         <Link to={`/product/${product._id}`} className='text-dark text-decoration-none'>
           <Card.Title as='div'>
             <strong>{product.name}</strong>

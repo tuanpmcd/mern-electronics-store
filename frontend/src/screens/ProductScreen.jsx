@@ -207,6 +207,7 @@ const ProductScreen = () => {
                         // disabled={loadingProductReview}
                         type='submit'
                         variant='primary'
+                        className='my-2'
                       >
                         Submit
                       </Button>
