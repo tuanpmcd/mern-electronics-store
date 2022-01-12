@@ -65,27 +65,29 @@ const UserEditScreen = () => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId='name'>
+            <Form.Group controlId='name' className='mb-3'>
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type='name'
                 placeholder='Enter name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                disabled
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='email'>
+            <Form.Group controlId='email' className='mb-3'>
               <Form.Label>Email Address</Form.Label>
               <Form.Control
                 type='email'
                 placeholder='Enter email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                disabled
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='isadmin'>
+            <Form.Group controlId='isadmin' className='mb-3'>
               <Form.Check
                 type='checkbox'
                 label='Is Admin'

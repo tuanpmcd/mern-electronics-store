@@ -42,7 +42,7 @@ const RegisterScreen = () => {
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler} className="border p-3">
-        <Form.Group controlId='name'>
+        <Form.Group className='mb-3' controlId='name'>
           <Form.Label>Name</Form.Label>
           <Form.Control
             type='name'
@@ -52,7 +52,7 @@ const RegisterScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='email'>
+        <Form.Group className='mb-3' controlId='email'>
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type='email'
@@ -62,7 +62,7 @@ const RegisterScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='password'>
+        <Form.Group className='mb-3' controlId='password'>
           <Form.Label>Password</Form.Label>
           <Form.Control
             type='password'
@@ -72,7 +72,7 @@ const RegisterScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='confirmPassword'>
+        <Form.Group className='mb-3' controlId='confirmPassword'>
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
             type='password'
@@ -82,7 +82,7 @@ const RegisterScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary' className='my-3'>
+        <Button type='submit' variant='primary'>
           Register
         </Button>
       </Form>

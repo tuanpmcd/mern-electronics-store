@@ -55,7 +55,7 @@ const CartScreen = () => {
           <ListGroup variant='flush'>
             {cartItems.map((item) => (
               <ListGroup.Item key={item.product}>
-                <Row>
+                <Row className='d-flex align-items-center'>
                   <Col md={2}>
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
@@ -86,7 +86,7 @@ const CartScreen = () => {
                       variant='light'
                       onClick={() => removeFromCartHandler(item.product)}
                     >
-                      <i className='fas fa-trash'></i>
+                      <i className='fas fa-trash text-danger'></i>
                     </Button>
                   </Col>
                 </Row>
