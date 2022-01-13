@@ -26,6 +26,9 @@ import ProductEditScreen from "./screens/ProductEditScreen";
 
 import OrderListScreen from "./screens/OrderListScreen";
 
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -62,6 +65,7 @@ const App = () => {
         </Container>
       </main>
       <Footer />
+      <ToastContainer />
     </BrowserRouter>
   )
 }

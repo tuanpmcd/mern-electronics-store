@@ -34,7 +34,7 @@ const LoginScreen = () => {
       <h1>Sign In</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
-      <Form onSubmit={submitHandler} className="border p-3">
+      <Form onSubmit={submitHandler} className="border p-3 mb-2">
         <Form.Group className='mb-3' controlId='email'>
           <Form.Label>Email Address</Form.Label>
           <Form.Control
@@ -55,7 +55,7 @@ const LoginScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary'>
+        <Button type='submit' variant='info'>
           Sign In
         </Button>
       </Form>
@@ -63,7 +63,7 @@ const LoginScreen = () => {
       <Row>
         <Col>
           New Customer?{' '}
-          <Link to='/register'>
+          <Link to='/register' className='text-danger'>
             Register
           </Link>
         </Col>

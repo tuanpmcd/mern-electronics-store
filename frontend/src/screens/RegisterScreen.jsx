@@ -18,7 +18,9 @@ const RegisterScreen = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const userLogin = useSelector(state => state.userLogin)
-  const { loading, error, userInfo } = userLogin
+  const { userInfo } = userLogin
+  const userRegister = useSelector(state => state.userRegister)
+  const { loading, error } = userRegister
 
   useEffect(() => {
     if (userInfo) {
@@ -41,7 +43,7 @@ const RegisterScreen = () => {
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
-      <Form onSubmit={submitHandler} className="border p-3">
+      <Form onSubmit={submitHandler} className="border p-3 mb-2">
         <Form.Group className='mb-3' controlId='name'>
           <Form.Label>Name</Form.Label>
           <Form.Control
@@ -82,7 +84,7 @@ const RegisterScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary'>
+        <Button type='submit' variant='info'>
           Register
         </Button>
       </Form>
@@ -90,7 +92,7 @@ const RegisterScreen = () => {
       <Row>
         <Col>
           Have an Account?{' '}
-          <Link to={'/login'}>
+          <Link to={'/login'} className='text-danger'>
             Login
           </Link>
         </Col>
