@@ -72,14 +72,14 @@ const ProductScreen = () => {
       ) : (
         <>
           <Meta title={product.name} />
-          <Row>
+          <Row className='d-flex align-items-center mb-3'>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
             </Col>
             <Col md={3}>
               <ListGroup variant='flush'>
                 <ListGroup.Item>
-                  <h3>{product.name}</h3>
+                  <h4>{product.name}</h4>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Rating
@@ -117,7 +117,7 @@ const ProductScreen = () => {
                   {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
-                        <Col>Qty</Col>
+                        <Col>Quantity</Col>
                         <Col>
                           <Form.Control
                             as='select'
@@ -140,7 +140,7 @@ const ProductScreen = () => {
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
-                      className='btn-block'
+                      className='btn btn-info text-white btn-block'
                       type='button'
                       disabled={product.countInStock === 0}
                     >
@@ -166,7 +166,7 @@ const ProductScreen = () => {
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item>
-                  <h2>Write a Customer Review</h2>
+                  <h2>Write a review</h2>
                   {successProductReview && (
                     <Message variant='success'>
                       Review submitted successfully
@@ -179,7 +179,7 @@ const ProductScreen = () => {
                   {userInfo ? (
                     <Form onSubmit={submitHandler}
                     >
-                      <Form.Group controlId='rating'>
+                      <Form.Group className='mb-3' controlId='rating'>
                         <Form.Label>Rating</Form.Label>
                         <Form.Control
                           as='select'
@@ -206,15 +206,15 @@ const ProductScreen = () => {
                       <Button
                         // disabled={loadingProductReview}
                         type='submit'
-                        variant='primary'
-                        className='my-2'
+                        variant='info'
+                        className='my-2 text-white'
                       >
                         Submit
                       </Button>
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to='/login'>sign in</Link> to write a review{' '}
+                      Please <Link className='text-danger' to='/login'>sign in</Link> to write a review{' '}
                     </Message>
                   )}
                 </ListGroup.Item>

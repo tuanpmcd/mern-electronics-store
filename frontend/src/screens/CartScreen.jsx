@@ -55,15 +55,15 @@ const CartScreen = () => {
           <ListGroup variant='flush'>
             {cartItems.map((item) => (
               <ListGroup.Item key={item.product}>
-                <Row className='d-flex align-items-center'>
+                <Row className='d-flex align-items-center justify-content-between'>
                   <Col md={2}>
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
-                  <Col md={3}>
-                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+                  <Col md={4}>
+                    <Link className='text-info' to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
-                  <Col md={2}>${item.price}</Col>
-                  <Col md={2}>
+                  <Col className='text-danger' md={1}>${item.price}</Col>
+                  <Col md={1}>
                     <Form.Control
                       as='select'
                       value={item.qty}
@@ -80,7 +80,7 @@ const CartScreen = () => {
                       ))}
                     </Form.Control>
                   </Col>
-                  <Col md={2}>
+                  <Col md={1}>
                     <Button
                       type='button'
                       variant='light'
@@ -100,7 +100,7 @@ const CartScreen = () => {
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                Total ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
                 items
               </h2>
               $
@@ -111,7 +111,7 @@ const CartScreen = () => {
             <ListGroup.Item>
               <Button
                 type='button'
-                className='btn-block'
+                className='btn btn-info text-white btn-block'
                 disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
               >

@@ -67,8 +67,8 @@ const ProfileScreen = () => {
         ) : error ? (
           <Message variant='danger'>{error}</Message>
         ) : (
-          <Form onSubmit={submitHandler}>
-            <Form.Group controlId='name'>
+          <Form onSubmit={submitHandler} className='mb-3'>
+            <Form.Group className='mb-3' controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type='name'
@@ -78,7 +78,7 @@ const ProfileScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='email'>
+            <Form.Group className='mb-3' controlId='email'>
               <Form.Label>Email Address</Form.Label>
               <Form.Control
                 type='email'
@@ -89,7 +89,7 @@ const ProfileScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='password'>
+            <Form.Group className='mb-3' controlId='password'>
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type='password'
@@ -99,7 +99,7 @@ const ProfileScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='confirmPassword'>
+            <Form.Group className='mb-3' controlId='confirmPassword'>
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 type='password'
@@ -109,7 +109,7 @@ const ProfileScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary' className='my-2'>
+            <Button type='submit' variant='info' className='text-white'>
               Update
             </Button>
           </Form>
@@ -122,7 +122,7 @@ const ProfileScreen = () => {
         ) : errorOrders ? (
           <Message variant='danger'>{errorOrders}</Message>
         ) : (
-          <Table bordered hover responsive className='table-sm'>
+          <Table bordered hover responsive className='table-sm text-center'>
             <thead>
               <tr>
                 <th>ID</th>
