@@ -54,16 +54,16 @@ const CartScreen = () => {
         ) : (
           <ListGroup variant='flush'>
             {cartItems.map((item) => (
-              <ListGroup.Item key={item.product}>
-                <Row className='d-flex align-items-center justify-content-between'>
-                  <Col md={2}>
+              <ListGroup.Item key={item.product} className='d-flex align-items-md-center justify-content-md-center'>
+                <Row className='d-flex align-items-center justify-content-between text-center'>
+                  <Col className='p-1' md={2} >
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
-                  <Col md={4}>
-                    <Link className='text-info' to={`/product/${item.product}`}>{item.name}</Link>
+                  <Col className='p-1' md={4}>
+                    <Link className='text-info text-decoration-none' to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
-                  <Col className='text-danger' md={1}>${item.price}</Col>
-                  <Col md={1}>
+                  <Col className='p-1' md={1}>${item.price}</Col>
+                  <Col className='p-1' md={1}>
                     <Form.Control
                       as='select'
                       value={item.qty}
@@ -80,7 +80,7 @@ const CartScreen = () => {
                       ))}
                     </Form.Control>
                   </Col>
-                  <Col md={1}>
+                  <Col className='p-1' md={1}>
                     <Button
                       type='button'
                       variant='light'

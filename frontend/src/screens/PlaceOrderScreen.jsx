@@ -92,8 +92,8 @@ const PlaceOrderScreen = () => {
                 <ListGroup variant='flush'>
                   {cart.cartItems.map((item, index) => (
                     <ListGroup.Item key={index}>
-                      <Row>
-                        <Col md={1}>
+                      <Row className='text-center'>
+                        <Col className='p-1' md={1}>
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -101,12 +101,12 @@ const PlaceOrderScreen = () => {
                             rounded
                           />
                         </Col>
-                        <Col>
-                          <Link to={`/product/${item.product}`}>
+                        <Col  className='p-1'>
+                          <Link to={`/product/${item.product}`} className='text-info text-decoration-none'>
                             {item.name}
                           </Link>
                         </Col>
-                        <Col md={4}>
+                        <Col md={4} className='text-danger p-1'>
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
                       </Row>
@@ -153,7 +153,7 @@ const PlaceOrderScreen = () => {
               <ListGroup.Item>
                 <Button
                   type='button'
-                  className='btn-block'
+                  className='btn-block btn btn-info text-white'
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
                 >

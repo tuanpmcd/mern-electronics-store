@@ -97,7 +97,7 @@ const OrderScreen = () => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      <h1>Order {order._id}</h1>
+      <h1 className='p-3'>Order</h1>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
@@ -108,7 +108,7 @@ const OrderScreen = () => {
               </p>
               <p>
                 <strong>Email: </strong>{' '}
-                <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+                <a className='text-info text-decoration-none' href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
                 <strong>Address:</strong>
@@ -146,8 +146,8 @@ const OrderScreen = () => {
                 <ListGroup variant='flush'>
                   {order.orderItems.map((item, index) => (
                     <ListGroup.Item key={index}>
-                      <Row>
-                        <Col md={1}>
+                      <Row className='text-center'>
+                        <Col className='p-1' md={1}>
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -155,12 +155,12 @@ const OrderScreen = () => {
                             rounded
                           />
                         </Col>
-                        <Col>
-                          <Link to={`/product/${item.product}`}>
+                        <Col className='p-1'>
+                          <Link className='text-info text-decoration-none' to={`/product/${item.product}`}>
                             {item.name}
                           </Link>
                         </Col>
-                        <Col md={4}>
+                        <Col className='text-danger' md={4}>
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
                       </Row>

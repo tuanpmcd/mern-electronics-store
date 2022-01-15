@@ -28,6 +28,7 @@ const HomeScreen = () => {
   return (
     <>
       <Meta />
+      <h4 className='py-3'>Hot Products</h4>
       {!keyword ? (
         <ProductCarousel />
       ) : (
